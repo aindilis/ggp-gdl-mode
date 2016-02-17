@@ -1,10 +1,10 @@
 (defun ggp-gdl-util-contains-all-terms (string term-list)
  ""
- (setq ggp-gdl-contains-all-terms-all-match t)
+ (setq kmax-contains-all-terms-all-match t)
  (mapcar (lambda (term)
 	  (if (not (string-match-p term string))
-	   (setq ggp-gdl-contains-all-terms-all-match nil))) term-list)
- ggp-gdl-contains-all-terms-all-match)
+	   (setq kmax-contains-all-terms-all-match nil))) term-list)
+ kmax-contains-all-terms-all-match)
 
 (setq auto-mode-alist
  (cons '("\\.kif$" . ggp-gdl-sigmakee-or-ggp-gdl-mode) auto-mode-alist))
@@ -32,7 +32,7 @@
   (setq load-path
    (cons dir load-path))))
 
-(add-to-list 'auto-mode-alist '("\\.gdl$" . ggp-gdl-mode))
+(add-to-list 'auto-mode-alist '("\\.gdl\\'" . ggp-gdl-mode))
 
 ;; add something here to check kif files for whether they contain the
 ;; gdl keywords and if so, make it kif mode, just like prolog/perl
